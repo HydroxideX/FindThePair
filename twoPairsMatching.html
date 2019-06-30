@@ -2,121 +2,38 @@
 <html>
 <head>
 	<title>Find The Pair</title>
-	<style type="text/css">
-		img {
-			max-width: 150px;
-			min-width :150px;
-			height: 150px;
-		}
-	</style>
-
-	<script type="text/javascript">
-		var row = 6;
-		var col = 6;
-		var ct = 0;
-		var images = new Array();
-		var selectedPhotos = new Array(4);
-		var photoLayout = new Array(row);
-		var solved = new Array(row);
-		for (var i = 0;i<row;i++) {
-			solved[i] = new Array(col);
-			photoLayout[i] = new Array(col);
-		}
-		for(var i = 0;i<row;i++) {
-			for (var j = 0 ; j<col ; j++) {
-				solved[i][j] = 0;
-			}
-		}
-		images[0] = "\"Naruto.jpg\"";
-		images[1] = "\"Sasuke.jpg\"";
-		ct = 0;
-		for(var i = 0 ; i < (row*col)/2 ; i++) {
-			index = parseInt(Math.random()*images.length);
-			while (ct <= 1) {
-				x = parseInt(Math.random()*row);
-				y = parseInt(Math.random()*col);
-				if(solved[x][y] == 0) {
-					ct += 1;
-					solved[x][y] = 1;
-					photoLayout[x][y] = images[index];
-				}
-			}
-			ct = 0;
-		}
-		for(var i = 0;i<row;i++) {
-			for (var j = 0 ; j<col ; j++) {
-				solved[i][j] = 0;
-			}
-		}
-	</script>	
+	<link rel="stylesheet" type="text/css" href="layout.css">
+	<script src="Script.js"></script>
 </head>
-<body>
-	<script type="text/javascript">
+<body >
+	</div>
+	<div id="finishScore">
+	</div>
+	<div id = "lastHighScore">
+	</div>
+	<div id = "finishTime">
+	</div>
+	<div id = "fullPage">
+		<div>
+			<p id = "score"></p>
+			<p id = "highScore"></p>
+		</div>
+		<div id = "allbtns">
+			<div id="btnSelect">
+				<select id = "pairsNumber">
+						<option value="36">18 Pairs</option>
+						<option value="64">32 Pairs</option>
+						<option value="100">50 Pairs</option>
+				</select>
+				<img id ="startButton" src="startButton.jpg" onclick="resize()">
+			</div>
+			<input id = "solveButton"type="button" value="solve" onclick="solveAll()">
+		</div>
+		<div id = "clock">
+			<p id = "Timer"></p>
+		</div>
+		<table id = "grid">
+		</table>
 
-		function resize() {
-			if (document.getElementById("pairsNumber").value == 36) {
-				window.location.replace("twoPairsMatching.html");
-			} else if (document.getElementById("pairsNumber").value == 64) {
-				window.location.replace("twoPairsMatching1.html");
-			} else if (document.getElementById("pairsNumber").value == 100){
-				window.location.replace("twoPairsMatching2.html");
-			}
-		}
-		ct = 0;
-		function change(x,y){
-			var imageID = x.toString() + y.toString();
-			if (solved[x][y] == 0) {
-				if(ct) {
-					selectedPhotos[2] = x;
-					selectedPhotos[3] = y;
-				} else {
-					selectedPhotos[0] = x;
-					selectedPhotos[1] = y;
-				}
-		
-			name =  photoLayout[x][y];
-			if (name == "\"Naruto.jpg\"") 
-			{
-				document.getElementById(imageID).src = "Naruto.jpg";
-			}
-			else if (name == "\"Sasuke.jpg\"") 
-			{
-				document.getElementById(imageID).src = "Sasuke.jpg";
-			}
-			if(ct == 1) {
-				if (photoLayout[selectedPhotos[0]][selectedPhotos[1]] 
-					== photoLayout[selectedPhotos[2]][selectedPhotos[3]] ) 
-				{
-					solved[selectedPhotos[0]][selectedPhotos[1]] = 1;
-					solved[selectedPhotos[2]][selectedPhotos[3]] = 1;
-				} else {
-					x = selectedPhotos[0];
-					y = selectedPhotos[1];
-					var oldImageID = x.toString() + y.toString();
-					document.getElementById(oldImageID).src = "bckImg.jpg";
-					document.getElementById(imageID).src = "bckImg.jpg"; 
-				}
-				selectedPhotos[0] = 0;
-				selectedPhotos[1] = 0;
-				selectedPhotos[2] = 0;
-				selectedPhotos[3] = 0;
-				var end = 1;for(var i = 0;i<row;i++) {for(var j = 0;j<col;j++) {if(solved[i][j] == 0) {end = 0;}}}
-				if (end == 1) {alert("Congratulations!")}
-				ct = 0;
-			} else {
-				ct = 1;
-			}
-		}
-		}
-	</script>
-	<select id = "pairsNumber">
-			<option value="36">18 Pairs</option>
-			<option value="64">32 Pairs</option>
-			<option value="100">50 Pairs</option>
-	</select>
-	<input type="button" value="restart" onclick="resize()">
-	<table id = "grid">
-			<tr><td><img id ="00" src ="bckImg.jpg" onclick="change(0,0)"></td><td><img id ="01" src ="bckImg.jpg" onclick="change(0,1)"></td><td><img id ="02" src ="bckImg.jpg" onclick="change(0,2)"></td><td><img id ="03" src ="bckImg.jpg" onclick="change(0,3)"></td><td><img id ="04" src ="bckImg.jpg" onclick="change(0,4)"></td><td><img id ="05" src ="bckImg.jpg" onclick="change(0,5)"></td></tr><tr><td><img id ="10" src ="bckImg.jpg" onclick="change(1,0)"></td><td><img id ="11" src ="bckImg.jpg" onclick="change(1,1)"></td><td><img id ="12" src ="bckImg.jpg" onclick="change(1,2)"></td><td><img id ="13" src ="bckImg.jpg" onclick="change(1,3)"></td><td><img id ="14" src ="bckImg.jpg" onclick="change(1,4)"></td><td><img id ="15" src ="bckImg.jpg" onclick="change(1,5)"></td></tr><tr><td><img id ="20" src ="bckImg.jpg" onclick="change(2,0)"></td><td><img id ="21" src ="bckImg.jpg" onclick="change(2,1)"></td><td><img id ="22" src ="bckImg.jpg" onclick="change(2,2)"></td><td><img id ="23" src ="bckImg.jpg" onclick="change(2,3)"></td><td><img id ="24" src ="bckImg.jpg" onclick="change(2,4)"></td><td><img id ="25" src ="bckImg.jpg" onclick="change(2,5)"></td></tr><tr><td><img id ="30" src ="bckImg.jpg" onclick="change(3,0)"></td><td><img id ="31" src ="bckImg.jpg" onclick="change(3,1)"></td><td><img id ="32" src ="bckImg.jpg" onclick="change(3,2)"></td><td><img id ="33" src ="bckImg.jpg" onclick="change(3,3)"></td><td><img id ="34" src ="bckImg.jpg" onclick="change(3,4)"></td><td><img id ="35" src ="bckImg.jpg" onclick="change(3,5)"></td></tr><tr><td><img id ="40" src ="bckImg.jpg" onclick="change(4,0)"></td><td><img id ="41" src ="bckImg.jpg" onclick="change(4,1)"></td><td><img id ="42" src ="bckImg.jpg" onclick="change(4,2)"></td><td><img id ="43" src ="bckImg.jpg" onclick="change(4,3)"></td><td><img id ="44" src ="bckImg.jpg" onclick="change(4,4)"></td><td><img id ="45" src ="bckImg.jpg" onclick="change(4,5)"></td></tr><tr><td><img id ="50" src ="bckImg.jpg" onclick="change(5,0)"></td><td><img id ="51" src ="bckImg.jpg" onclick="change(5,1)"></td><td><img id ="52" src ="bckImg.jpg" onclick="change(5,2)"></td><td><img id ="53" src ="bckImg.jpg" onclick="change(5,3)"></td><td><img id ="54" src ="bckImg.jpg" onclick="change(5,4)"></td><td><img id ="55" src ="bckImg.jpg" onclick="change(5,5)"></td></tr>
-	</table>
 </body>
 </html>

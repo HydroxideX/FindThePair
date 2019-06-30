@@ -1,0 +1,93 @@
+img {
+	width: 150px;
+	height: 150px;
+}
+ #grid {
+    width:100%; 
+   	height: 100%;
+
+}
+body{
+    background-image:url(backGround.jpg) ;
+    background-size: cover; 
+    height: 65vh;
+    padding:0;
+    margin:0;
+}
+
+#fullPage {
+	width: 100%;
+	height: 100%;
+}
+
+#allbtns {
+	text-align: center;
+	margin-top: 20px;
+}
+
+#pairsNumber {
+	background-color:  lightyellow ;
+	font-size: 30px;
+	width : 150px;
+	height: 75px;
+	border: 1px solid light;
+}
+
+#startButton {
+	background-color:  red ;
+	position:relative;
+	top: 25px;
+	width : 150px;
+	height: 75px;
+
+}
+
+
+#solveButton {
+	background-color : #3CC88C;
+	font-size: 30px;
+	width : 100px;
+	height: 50px;
+	color :white;
+}
+
+#Timer {
+	font-size: 50px;
+	font-family:Brush Script MT, Brush Script Std, cursive;
+	color: orange;
+}
+
+#finishScore{
+	font-size: 50px;
+	font-family:Brush Script MT, Brush Script Std, cursive;
+	color: green;
+}
+
+#lastHighScore {
+	font-size: 50px;
+	font-family:Brush Script MT, Brush Script Std, cursive;
+	color: blue;
+}
+
+#finishTime {
+	font-size: 50px;
+	font-family:Brush Script MT, Brush Script Std, cursive;
+	color: orange;
+}
+
+#score {
+	float:left;
+	font-size: 300%;
+	color :green;
+}
+
+#highScore {
+	float: right;
+	font-size: 300%;
+	color: #087C9A;
+
+}
+
+p {
+	font-family:impact;
+}
