@@ -15,9 +15,20 @@ var score = 0;
 var displaySeconds;
 var hours;
 var minutes;
-var highScore = 0;
+var highScore = localStorage.getItem('highScore');
 var timer;
+function storeHighScore(highScore,score) {
+  if (typeof(Storage) !== "undefined") {
+   localStorage.setItem('highScore', score); 
+   }
+}
 function start (row,col) {
+
+	highScore = localStorage.getItem('highScore');
+	if(highScore == null)
+	{
+		highScore = 0;
+	}
 	if(timeout) {
 		return;
 	}
@@ -81,6 +92,8 @@ function start (row,col) {
 	}
 	ct = 0;
 }
+
+
 
 function resize() {
 	document.body.style.background = 'url(https://wallpapercave.com/wp/wp2637256.jpg)';
@@ -219,6 +232,7 @@ function gameOver(){
 	document.body.style.backgroundSize = "cover";
 	document.getElementById("fullPage").innerHTML ="";
 	if(score > highScore) {
+		storeHighScore(highScore,score);
 		document.getElementById("finishScore").innerHTML = "Congratulations You Beat The highScore, Your Score is " + score;
 	} else {
 		document.getElementById("finishScore").innerHTML = "Congratulations Your Score is " + score;
