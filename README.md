@@ -6,3 +6,4 @@ Features:
 2) Timer.
 3) Score based on time taken to win the game and misses reduce the score.
 4) A solve button to solve it if it's too hard.
+5) Saves highScore in Browser.
