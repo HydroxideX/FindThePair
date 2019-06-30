@@ -203,7 +203,7 @@ function change(x,y){
 			{
 				solved[selectedPhotos[0]][selectedPhotos[1]] = 1;
 				solved[selectedPhotos[2]][selectedPhotos[3]] = 1;
-				score += 5;
+				score += 12;
 			}  else {
 				x = selectedPhotos[0];
 				y = selectedPhotos[1];
@@ -231,13 +231,16 @@ function gameOver(){
 	document.body.style.background = 'url(https://media1.tenor.com/images/9a1f11839c9f9e902f09e8259805319a/tenor.gif?itemid=11805675)';
 	document.body.style.backgroundSize = "cover";
 	document.getElementById("fullPage").innerHTML ="";
+	if (score < 0) {
+		score = 0;
+	}
 	if(score > highScore) {
 		storeHighScore(highScore,score);
 		document.getElementById("finishScore").innerHTML = "Congratulations You Beat The highScore, Your Score is " + score;
 	} else {
 		document.getElementById("finishScore").innerHTML = "Congratulations Your Score is " + score;
 	}
-	document.getElementById("finishTime").innerHTML = hours +" Hours " + minutes  +" Minutes "  + displaySeconds + " Seconds.";
+	document.getElementById("finishTime").innerHTML = "You finished in " +hours +" Hours " + minutes  +" Minutes "  + displaySeconds + " Seconds.";
 	if(score > highScore) {
 		document.getElementById("lastHighScore").innerHTML = "Your last High Score is " + highScore;
 	}else {
