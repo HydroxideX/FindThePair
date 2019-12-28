@@ -19,7 +19,7 @@ var highScore = localStorage.getItem('highScore');
 var timer;
 function storeHighScore(highScore,score) {
   if (typeof(Storage) !== "undefined") {
-   localStorage.setItem('highScore', score); 
+   localStorage.setItem('highScore', score);
    }
 }
 function start (row,col) {
@@ -34,7 +34,7 @@ function start (row,col) {
 	}
 	startDate = new Date();
 	timer = setInterval(function(){
-	date = new Date();	
+	date = new Date();
 	seconds = date.getSeconds() -startDate.getSeconds();
 	seconds += (date.getMinutes() - startDate.getMinutes()) * 60;
 	seconds += (date.getHours() - startDate.getHours()) * 3600;
@@ -51,7 +51,7 @@ function start (row,col) {
 	}, 1000);
 	document.getElementById("score").innerHTML = "Your Score is " + score;
 	document.getElementById("highScore").innerHTML = "Highest Score is " + highScore;
-	
+
 	photoLayout = new Array(row);
 	solved = new Array(row);
 	for (var i = 0;i<row;i++) {
@@ -98,11 +98,12 @@ function start (row,col) {
 function resize() {
 	document.body.style.background = 'url(https://wallpapercave.com/wp/wp2637256.jpg)';
 	document.body.style.backgroundSize = "cover";
-	
+
 
 	if (timeout) {
 		return;
 	}
+  score = 0;
 	if (document.getElementById("pairsNumber").value == 36) {
 		row = 6;
 		col = 6;
@@ -173,19 +174,19 @@ function change(x,y){
 		}
 
 		name =  photoLayout[x][y];
-		if (name == "\"Naruto.jpg\"") 
+		if (name == "\"Naruto.jpg\"")
 		{
 			document.getElementById(imageID).src = "Naruto.jpg";
 		}
-		else if (name == "\"Sasuke.jpg\"") 
+		else if (name == "\"Sasuke.jpg\"")
 		{
 			document.getElementById(imageID).src = "Sasuke.jpg";
 		}
-		else if (name == "\"Sakura.jpg\"") 
+		else if (name == "\"Sakura.jpg\"")
 		{
 			document.getElementById(imageID).src = "Sakura.jpg";
 		}
-		else if (name == "\"Kakashi.jpg\"") 
+		else if (name == "\"Kakashi.jpg\"")
 		{
 			document.getElementById(imageID).src = "Kakashi.jpg";
 		}else if (name == "\"Guy.jpg\"") {
@@ -198,8 +199,8 @@ function change(x,y){
 				document.getElementById(imageID).src = "Neji.jpg";
 		}
 		if(ct == 1 &&(selectedPhotos[0] != selectedPhotos[2] || selectedPhotos[1] != selectedPhotos[3] )) {
-			if (photoLayout[selectedPhotos[0]][selectedPhotos[1]] 
-				== photoLayout[selectedPhotos[2]][selectedPhotos[3]]  ) 
+			if (photoLayout[selectedPhotos[0]][selectedPhotos[1]]
+				== photoLayout[selectedPhotos[2]][selectedPhotos[3]]  )
 			{
 				solved[selectedPhotos[0]][selectedPhotos[1]] = 1;
 				solved[selectedPhotos[2]][selectedPhotos[3]] = 1;
@@ -244,16 +245,16 @@ function gameOver(){
 	if(score > highScore) {
 		document.getElementById("lastHighScore").innerHTML = "Your last High Score is " + highScore;
 	}else {
-		document.getElementById("lastHighScore").innerHTML = "Highest Score is " + highScore;		
+		document.getElementById("lastHighScore").innerHTML = "Highest Score is " + highScore;
 	}
 }
 
 function differentImagesView() {
 		timeout = null;
-		document.getElementById(imageID).src = "bckImg.jpg"; 
+		document.getElementById(imageID).src = "bckImg.jpg";
 		document.getElementById(oldImageID).src = "bckImg.jpg";
-		
-} 
+
+}
 
 function solveAll(){
 	if(timeout) {
@@ -264,19 +265,19 @@ function solveAll(){
 			solved[i][j] = 1;
 			imageID = i.toString() + j.toString();
 			name =  photoLayout[i][j];
-			if (name == "\"Naruto.jpg\"") 
+			if (name == "\"Naruto.jpg\"")
 			{
 				document.getElementById(imageID).src = "Naruto.jpg";
 			}
-			else if (name == "\"Sasuke.jpg\"") 
+			else if (name == "\"Sasuke.jpg\"")
 			{
 				document.getElementById(imageID).src = "Sasuke.jpg";
 			}
-			else if (name == "\"Sakura.jpg\"") 
+			else if (name == "\"Sakura.jpg\"")
 			{
 				document.getElementById(imageID).src = "Sakura.jpg";
 			}
-			else if (name == "\"Kakashi.jpg\"") 
+			else if (name == "\"Kakashi.jpg\"")
 			{
 				document.getElementById(imageID).src = "Kakashi.jpg";
 			}else if (name == "\"Guy.jpg\"") {
