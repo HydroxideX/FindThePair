@@ -1,17 +1,20 @@
-# FindThePair
-Find The Pair Game implemented using Javascript,HTML and CSS.
-Simple Memory Game Where The Player Tries To Match Cards To Reveal The Whole Grid.
+# FindThePair: implemented using Javascript, HTML and CSS.
+
+- Simple Memory Game Where The Player Tries To Match Cards To Reveal The Whole Grid.
+- Go Enjoy The Game [Link](https://hydroxidex.github.io/FindThePair/).
+
 
 ## Features ##
+- Three Different Levels Of Difficulty.
 - Timer.
-- Score based on time taken to win the game and misses reduce the score.
-- A solve button to solve it if it's too hard.
-- Saves highScore in User Browser.
+- Score Based On Time Taken To Win The Game and Decreases When Player Miss.
+- A Solve Button To Solve it If it's Too Hard.
+- Saves High Score in Browser.
 
 ## Contribution Guidelines ##
 This project is public, Feel free to create pull requests.
 
-Credits:
+## Credits ##
 
 - Cat Photo by Marko Blažević on Unsplash.
 - Fox Photo by Alex Glebov on Unsplash.
