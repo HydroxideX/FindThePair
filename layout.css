@@ -1,18 +1,17 @@
 img {
-	width: 150px;
-	height: 150px;
+		width:150px;
+   	height:150px;
 }
- #grid {
-    width:100%; 
-   	height: 100%;
 
+#grid {
+    width:100%;
+   	height: 100%;
 }
 body{
-    background-image:url(backGround.jpg) ;
-    background-size: cover; 
-    height: 65vh;
-    padding:0;
-    margin:0;
+    background-image:url(backGround.jpg);
+		background-repeat: no-repeat;
+  	background-attachment: fixed;
+		background-size: 100% 100%;
 }
 
 #fullPage {
@@ -23,18 +22,18 @@ body{
 #allbtns {
 	text-align: center;
 	margin-top: 20px;
+	background-color: transparent;
 }
 
 #pairsNumber {
-	background-color:  lightyellow ;
+	background-color: transparent;
 	font-size: 30px;
 	width : 150px;
 	height: 75px;
-	border: 1px solid light;
+	border: none;
 }
 
 #startButton {
-	background-color:  red ;
 	position:relative;
 	top: 25px;
 	width : 150px;
@@ -47,7 +46,6 @@ body{
 	font-size: 30px;
 	width : 180px;
 	height: 75px;
-	color :white;
 }
 
 #Timer {
