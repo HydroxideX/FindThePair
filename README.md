@@ -1,5 +1,5 @@
-# FindThePair: implemented using Javascript, HTML and CSS.
-
+# FindThePair
+- implemented using Javascript, HTML and CSS.
 - Simple Memory Game Where The Player Tries To Match Cards To Reveal The Whole Grid.
 - Go Enjoy The Game [Link](https://hydroxidex.github.io/FindThePair/).
 
